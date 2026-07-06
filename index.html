@@ -7,6 +7,7 @@
   <meta name="description" content="A retro tribute site inspired by the Once Upon a Time in Hollywood website. Summer of '69, neon marquees, and the golden age of Tinseltown.">
   <link rel="preload" href="fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/shrikhand.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/abril-fatface.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌴</text></svg>">
 </head>
@@ -14,6 +15,7 @@
 
   <!-- ══════════════ INTRO / FILM LEADER ══════════════ -->
   <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro__scratches"></div>
     <div class="intro__leader">
       <div class="intro__circle"></div>
       <div class="intro__cross intro__cross--v"></div>
@@ -45,10 +47,38 @@
     <a class="nav__cta" href="#footer">Get Tickets</a>
   </header>
 
-  <!-- ══════════════ HERO ══════════════ -->
   <main id="top">
+
+    <!-- ══════════════ HERO — GOLDEN HOUR PANORAMA ══════════════ -->
     <section class="hero">
-      <div class="hero__burst" aria-hidden="true"></div>
+      <div class="hero__sky" aria-hidden="true"></div>
+      <div class="hero__sun" data-plx="0.18" aria-hidden="true"></div>
+      <div class="hero__haze" aria-hidden="true"></div>
+
+      <!-- far ridge with the sign -->
+      <svg class="hero__hills hero__hills--far" data-plx="0.10" viewBox="0 0 1440 240" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <path d="M0 240 L0 150 C90 120 170 128 250 112 C340 92 420 104 500 96 C600 86 690 104 780 98 C880 90 960 70 1050 82 C1150 94 1240 84 1320 100 C1370 110 1410 122 1440 130 L1440 240 Z" fill="#c98d5f" opacity=".55"/>
+        <text x="1043" y="76" class="hero__sign" transform="rotate(-2 1043 76)">HOLLYWOOD</text>
+      </svg>
+
+      <!-- near ridge -->
+      <svg class="hero__hills hero__hills--near" data-plx="0.16" viewBox="0 0 1440 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <path d="M0 200 L0 130 C80 100 160 112 260 96 C380 76 470 96 570 90 C690 82 780 104 900 96 C1030 88 1120 62 1230 78 C1310 90 1390 104 1440 112 L1440 200 Z" fill="#8a5335" opacity=".75"/>
+      </svg>
+
+      <!-- distant palms -->
+      <svg class="hero__palm hero__palm--back-l" data-plx="0.22" viewBox="20 60 230 200" preserveAspectRatio="xMinYMax meet" aria-hidden="true">
+        <path d="M120 260 L128 150 C90 130 60 140 40 165 C80 148 105 150 126 158 C95 115 60 108 25 118 C70 100 108 112 130 140 C118 95 90 75 55 72 C100 62 130 90 140 130 C150 88 178 68 215 66 C180 80 158 102 150 138 C175 112 210 104 245 118 C205 112 172 126 152 155 C178 148 205 152 228 170 C200 158 170 158 146 168 L138 260 Z"/>
+      </svg>
+      <svg class="hero__palm hero__palm--back-r" data-plx="0.22" viewBox="1228 100 184 160" preserveAspectRatio="xMaxYMax meet" aria-hidden="true">
+        <path d="M1310 260 L1316 170 C1285 155 1260 162 1244 180 C1276 168 1296 170 1313 176 C1288 143 1260 138 1232 145 C1268 132 1298 141 1316 162 C1306 128 1284 112 1256 110 C1292 102 1316 124 1324 156 C1332 122 1354 106 1384 104 C1356 116 1338 133 1332 162 C1352 142 1380 136 1408 147 C1376 142 1350 153 1334 176 C1355 170 1377 174 1395 188 C1373 178 1349 178 1330 186 L1324 260 Z"/>
+      </svg>
+
+      <!-- birds -->
+      <svg class="hero__birds" viewBox="0 0 60 20" aria-hidden="true">
+        <path d="M2 10 Q7 4 12 10 M12 10 Q17 4 22 10" />
+        <path d="M30 16 Q34 11 38 16 M38 16 Q42 11 46 16" transform="scale(.8)"/>
+      </svg>
 
       <div class="hero__titles">
         <svg class="hero__arc" viewBox="0 0 1000 230" aria-hidden="true">
@@ -81,13 +111,14 @@
         </svg>
       </div>
 
-      <!-- palm silhouettes -->
-      <svg class="hero__palm hero__palm--l" viewBox="20 60 230 200" preserveAspectRatio="xMinYMax meet" aria-hidden="true">
+      <!-- foreground palms -->
+      <svg class="hero__palm hero__palm--l" data-plx="0.32" viewBox="20 60 230 200" preserveAspectRatio="xMinYMax meet" aria-hidden="true">
         <path class="palm" d="M120 260 L128 150 C90 130 60 140 40 165 C80 148 105 150 126 158 C95 115 60 108 25 118 C70 100 108 112 130 140 C118 95 90 75 55 72 C100 62 130 90 140 130 C150 88 178 68 215 66 C180 80 158 102 150 138 C175 112 210 104 245 118 C205 112 172 126 152 155 C178 148 205 152 228 170 C200 158 170 158 146 168 L138 260 Z"/>
       </svg>
-      <svg class="hero__palm hero__palm--r" viewBox="1228 100 184 160" preserveAspectRatio="xMaxYMax meet" aria-hidden="true">
-        <path class="palm palm--r" d="M1310 260 L1316 170 C1285 155 1260 162 1244 180 C1276 168 1296 170 1313 176 C1288 143 1260 138 1232 145 C1268 132 1298 141 1316 162 C1306 128 1284 112 1256 110 C1292 102 1316 124 1324 156 C1332 122 1354 106 1384 104 C1356 116 1338 133 1332 162 C1352 142 1380 136 1408 147 C1376 142 1350 153 1334 176 C1355 170 1377 174 1395 188 C1373 178 1349 178 1330 186 L1324 260 Z"/>
+      <svg class="hero__palm hero__palm--r" data-plx="0.32" viewBox="1228 100 184 160" preserveAspectRatio="xMaxYMax meet" aria-hidden="true">
+        <path class="palm palm--sway-r" d="M1310 260 L1316 170 C1285 155 1260 162 1244 180 C1276 168 1296 170 1313 176 C1288 143 1260 138 1232 145 C1268 132 1298 141 1316 162 C1306 128 1284 112 1256 110 C1292 102 1316 124 1324 156 C1332 122 1354 106 1384 104 C1356 116 1338 133 1332 162 C1352 142 1380 136 1408 147 C1376 142 1350 153 1334 176 C1355 170 1377 174 1395 188 C1373 178 1349 178 1330 186 L1324 260 Z"/>
       </svg>
+
       <div class="hero__ground" aria-hidden="true"></div>
 
       <a class="hero__scroll" href="#story">
@@ -105,7 +136,8 @@
     </div>
 
     <!-- ══════════════ THE STORY ══════════════ -->
-    <section class="story" id="story">
+    <section class="story paper" id="story">
+      <span class="story__numeral" aria-hidden="true">’69</span>
       <div class="story__inner">
         <p class="section-kicker reveal">Reel One</p>
         <h2 class="section-title reveal">The Story</h2>
@@ -131,112 +163,193 @@
             <p class="story__sig">— The Management</p>
           </div>
         </div>
+
+        <div class="story__stats reveal-stagger">
+          <div class="stub reveal">
+            <span class="stub__num" data-count="1969">0</span>
+            <span class="stub__label">The Year</span>
+          </div>
+          <div class="stub reveal">
+            <span class="stub__num" data-count="35">0</span>
+            <span class="stub__label">Millimetres</span>
+          </div>
+          <div class="stub reveal">
+            <span class="stub__num" data-count="110">0</span>
+            <span class="stub__label">In the Shade</span>
+          </div>
+          <div class="stub reveal">
+            <span class="stub__num" data-count="2">0</span>
+            <span class="stub__label">Features a Night</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ NIGHT PANORAMA ══════════════ -->
+    <section class="night">
+      <svg class="tear tear--top" viewBox="0 0 1440 30" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 0 L48 12 L96 4 L150 16 L210 6 L268 18 L330 8 L390 20 L455 7 L520 17 L586 5 L648 15 L710 6 L775 19 L840 8 L905 16 L968 5 L1030 18 L1095 9 L1160 19 L1225 6 L1290 15 L1355 7 L1440 14 L1440 0 Z"/>
+      </svg>
+
+      <div class="night__stars" aria-hidden="true"></div>
+      <div class="night__moon" data-plx="0.12" aria-hidden="true"></div>
+
+      <div class="night__copy">
+        <p class="night__neon reveal">The city dreams<br>in Technicolor</p>
+        <p class="night__sub reveal">— every night, ten miles of it, from the Valley to the sea —</p>
       </div>
 
-      <div class="story__stats reveal">
-        <div class="stat">
-          <span class="stat__num" data-count="1969">0</span>
-          <span class="stat__label">The Year</span>
-        </div>
-        <div class="stat">
-          <span class="stat__num" data-count="35">0</span>
-          <span class="stat__label">Millimetres</span>
-        </div>
-        <div class="stat">
-          <span class="stat__num" data-count="110">0</span>
-          <span class="stat__label">In the Shade</span>
-        </div>
-        <div class="stat">
-          <span class="stat__num" data-count="2">0</span>
-          <span class="stat__label">Features a Night</span>
-        </div>
-      </div>
+      <!-- searchlights -->
+      <div class="night__beam night__beam--a" aria-hidden="true"></div>
+      <div class="night__beam night__beam--b" aria-hidden="true"></div>
+
+      <!-- skyline -->
+      <svg class="night__skyline" viewBox="0 0 1440 190" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <g fill="#0d0906">
+          <rect x="0" y="120" width="90" height="70"/>
+          <rect x="90" y="86" width="70" height="104"/>
+          <rect x="176" y="128" width="110" height="62"/>
+          <rect x="230" y="60" width="16" height="80"/>
+          <rect x="222" y="56" width="32" height="10"/>
+          <rect x="300" y="100" width="80" height="90"/>
+          <rect x="396" y="70" width="58" height="120"/>
+          <rect x="470" y="132" width="120" height="58"/>
+          <rect x="540" y="96" width="42" height="94"/>
+          <rect x="606" y="80" width="72" height="110"/>
+          <path d="M690 190 L690 120 L716 96 L742 120 L742 190 Z"/>
+          <rect x="756" y="110" width="88" height="80"/>
+          <rect x="860" y="66" width="54" height="124"/>
+          <rect x="930" y="124" width="96" height="66"/>
+          <rect x="1042" y="88" width="66" height="102"/>
+          <rect x="1124" y="130" width="120" height="60"/>
+          <rect x="1180" y="72" width="20" height="70"/>
+          <circle cx="1190" cy="66" r="14"/>
+          <rect x="1260" y="98" width="76" height="92"/>
+          <rect x="1352" y="118" width="88" height="72"/>
+        </g>
+        <g class="night__windows" fill="#f6cf7d">
+          <rect x="14" y="132" width="6" height="8"/><rect x="34" y="146" width="6" height="8"/><rect x="62" y="132" width="6" height="8"/>
+          <rect x="102" y="98" width="6" height="8"/><rect x="122" y="112" width="6" height="8"/><rect x="140" y="98" width="6" height="8"/><rect x="112" y="140" width="6" height="8"/>
+          <rect x="200" y="140" width="6" height="8"/><rect x="252" y="152" width="6" height="8"/>
+          <rect x="314" y="112" width="6" height="8"/><rect x="342" y="128" width="6" height="8"/><rect x="360" y="112" width="6" height="8"/>
+          <rect x="408" y="84" width="6" height="8"/><rect x="428" y="102" width="6" height="8"/><rect x="412" y="130" width="6" height="8"/><rect x="436" y="150" width="6" height="8"/>
+          <rect x="496" y="144" width="6" height="8"/><rect x="552" y="108" width="6" height="8"/><rect x="562" y="134" width="6" height="8"/>
+          <rect x="620" y="94" width="6" height="8"/><rect x="644" y="112" width="6" height="8"/><rect x="660" y="94" width="6" height="8"/><rect x="628" y="140" width="6" height="8"/>
+          <rect x="712" y="126" width="8" height="10"/>
+          <rect x="772" y="122" width="6" height="8"/><rect x="800" y="140" width="6" height="8"/><rect x="822" y="122" width="6" height="8"/>
+          <rect x="872" y="80" width="6" height="8"/><rect x="892" y="98" width="6" height="8"/><rect x="876" y="124" width="6" height="8"/><rect x="896" y="148" width="6" height="8"/>
+          <rect x="948" y="136" width="6" height="8"/><rect x="1000" y="150" width="6" height="8"/>
+          <rect x="1054" y="100" width="6" height="8"/><rect x="1078" y="118" width="6" height="8"/><rect x="1060" y="146" width="6" height="8"/>
+          <rect x="1150" y="142" width="6" height="8"/><rect x="1216" y="152" width="6" height="8"/>
+          <rect x="1272" y="110" width="6" height="8"/><rect x="1298" y="128" width="6" height="8"/><rect x="1316" y="110" width="6" height="8"/>
+          <rect x="1370" y="130" width="6" height="8"/><rect x="1398" y="148" width="6" height="8"/>
+        </g>
+      </svg>
     </section>
 
     <!-- ══════════════ THE PLAYERS ══════════════ -->
     <section class="players" id="players">
       <p class="section-kicker section-kicker--light reveal">Reel Two</p>
       <h2 class="section-title section-title--light reveal">The Players</h2>
-      <p class="players__sub reveal">Three faces you’d see on every lot in town.</p>
+      <p class="players__sub reveal">Three names on every call sheet in town.</p>
 
-      <div class="players__grid">
-        <!-- THE ACTOR -->
-        <article class="card reveal" data-tilt>
-          <div class="card__photo card__photo--actor">
-            <div class="card__rays"></div>
-            <svg viewBox="0 0 200 220" class="card__portrait" aria-hidden="true">
-              <path d="M100 30 C138 30 152 58 150 88 C149 108 142 124 132 134 L132 150 C150 156 168 168 172 196 L172 220 L28 220 L28 196 C32 168 50 156 68 150 L68 134 C58 124 51 108 50 88 C48 58 62 30 100 30 Z" class="p-skin"/>
-              <path d="M52 84 C48 46 70 22 100 22 C130 22 152 46 148 84 C148 68 138 56 126 54 C110 51 90 51 74 54 C62 56 52 68 52 84 Z" class="p-hair"/>
-              <rect x="58" y="86" width="36" height="22" rx="10" class="p-glass"/>
-              <rect x="106" y="86" width="36" height="22" rx="10" class="p-glass"/>
-              <rect x="94" y="92" width="12" height="4" class="p-glass"/>
-              <path d="M70 178 L100 220 L130 178 L118 170 L100 196 L82 170 Z" class="p-collar"/>
+      <div class="players__grid reveal-stagger">
+        <!-- 01 THE ACTOR -->
+        <article class="panel panel--orange reveal" data-tilt>
+          <span class="panel__no">Nº 01</span>
+          <div class="panel__art">
+            <div class="panel__halftone"></div>
+            <svg viewBox="0 0 240 240" aria-hidden="true">
+              <!-- vintage TV -->
+              <line x1="96" y1="66" x2="58" y2="18" class="tv-ear"/>
+              <line x1="128" y1="66" x2="170" y2="24" class="tv-ear"/>
+              <circle cx="58" cy="18" r="4" class="tv-ear-tip"/>
+              <circle cx="170" cy="24" r="4" class="tv-ear-tip"/>
+              <rect x="30" y="64" width="180" height="130" rx="14" class="tv-body"/>
+              <rect x="44" y="78" width="118" height="102" rx="10" class="tv-screen"/>
+              <rect x="44" y="78" width="118" height="102" rx="10" class="tv-scanlines"/>
+              <path d="M78 140 L128 140 C133 140 133 133 126 131 L119 129 C119 113 87 113 87 129 L80 131 C73 133 73 140 78 140 Z" class="tv-picture"/>
+              <path d="M50 158 L156 158" class="tv-picture-line"/>
+              <circle cx="142" cy="96" r="8" class="tv-picture"/>
+              <circle cx="186" cy="98" r="9" class="tv-knob"/>
+              <circle cx="186" cy="126" r="9" class="tv-knob"/>
+              <rect x="176" y="146" width="20" height="26" rx="3" class="tv-vent"/>
+              <rect x="52" y="194" width="14" height="10" class="tv-foot"/>
+              <rect x="174" y="194" width="14" height="10" class="tv-foot"/>
             </svg>
           </div>
-          <div class="card__caption">
+          <div class="panel__caption">
             <h3>The Actor</h3>
-            <p>Star of the small screen, dreaming of the big one. Owns a house on Cielo Drive and a lot of doubt.</p>
-            <span class="card__stamp">FEATURED</span>
+            <p>Star of the small screen, dreaming of the big one. Owns a house on the hill and a lot of doubt.</p>
+            <span class="panel__stamp">FEATURED</span>
           </div>
         </article>
 
-        <!-- THE STUNTMAN -->
-        <article class="card reveal" data-tilt>
-          <div class="card__photo card__photo--stunt">
-            <div class="card__rays"></div>
-            <svg viewBox="0 0 200 220" class="card__portrait" aria-hidden="true">
-              <path d="M100 30 C138 30 152 58 150 88 C149 108 142 124 132 134 L132 150 C150 156 168 168 172 196 L172 220 L28 220 L28 196 C32 168 50 156 68 150 L68 134 C58 124 51 108 50 88 C48 58 62 30 100 30 Z" class="p-skin"/>
-              <path d="M54 78 C54 46 74 24 100 24 C126 24 146 46 146 78 C138 62 122 56 100 56 C78 56 62 62 54 78 Z" class="p-hair"/>
-              <ellipse cx="77" cy="97" rx="20" ry="13" class="p-glass"/>
-              <ellipse cx="123" cy="97" rx="20" ry="13" class="p-glass"/>
-              <rect x="92" y="93" width="16" height="4" class="p-glass"/>
-              <rect x="58" y="204" width="84" height="16" rx="4" class="p-tee"/>
-              <rect x="66" y="188" width="68" height="22" rx="8" class="p-tee"/>
+        <!-- 02 THE STUNTMAN -->
+        <article class="panel panel--teal reveal" data-tilt>
+          <span class="panel__no">Nº 02</span>
+          <div class="panel__art">
+            <div class="panel__halftone"></div>
+            <svg viewBox="0 0 240 240" aria-hidden="true">
+              <!-- aviators reflecting the highway -->
+              <path d="M28 96 C28 74 50 66 74 66 C100 66 112 78 118 92 L122 92 C128 78 140 66 166 66 C190 66 212 74 212 96 C212 128 194 150 166 150 C138 150 124 126 120 108 C116 126 102 150 74 150 C46 150 28 128 28 96 Z" class="av-frame"/>
+              <path d="M38 96 C38 80 54 74 74 74 C96 74 108 84 110 98 C112 118 98 142 74 142 C52 142 38 122 38 96 Z" class="av-lens"/>
+              <path d="M130 98 C132 84 144 74 166 74 C186 74 202 80 202 96 C202 122 188 142 166 142 C142 142 128 118 130 98 Z" class="av-lens"/>
+              <!-- lens reflections: road to the horizon -->
+              <g class="av-reflect">
+                <path d="M40 106 L108 106 L108 100 L40 100 Z" class="av-horizon"/>
+                <path d="M62 140 L74 106 L80 106 L74 140 Z" class="av-road"/>
+                <path d="M132 106 L200 106 L200 100 L132 100 Z" class="av-horizon"/>
+                <path d="M154 140 L166 106 L172 106 L166 140 Z" class="av-road"/>
+                <circle cx="92" cy="92" r="8" class="av-sun"/>
+                <circle cx="184" cy="92" r="8" class="av-sun"/>
+              </g>
+              <path d="M112 92 L128 92 L126 100 L114 100 Z" class="av-bridge"/>
+              <path d="M30 92 L14 84 M210 92 L226 84" class="av-temple"/>
             </svg>
           </div>
-          <div class="card__caption">
+          <div class="panel__caption">
             <h3>The Stuntman</h3>
             <p>Drives the car, takes the fall, fixes the antenna. The most dangerous man on any set — allegedly.</p>
-            <span class="card__stamp card__stamp--blue">CO-STARRING</span>
+            <span class="panel__stamp panel__stamp--gold">CO-STARRING</span>
           </div>
         </article>
 
-        <!-- THE STARLET -->
-        <article class="card reveal" data-tilt>
-          <div class="card__photo card__photo--star">
-            <div class="card__rays"></div>
-            <svg viewBox="0 0 200 220" class="card__portrait" aria-hidden="true">
-              <path d="M100 34 C134 34 148 60 146 90 C145 110 139 124 130 134 L130 150 C148 156 166 168 170 196 L170 220 L30 220 L30 196 C34 168 52 156 70 150 L70 134 C61 124 55 110 54 90 C52 60 66 34 100 34 Z" class="p-skin"/>
-              <path d="M100 16 C60 16 40 48 44 92 C46 130 40 160 30 178 L58 168 C52 140 54 120 56 98 C60 66 76 48 100 48 C124 48 140 66 144 98 C146 120 148 140 142 168 L170 178 C160 160 154 130 156 92 C160 48 140 16 100 16 Z" class="p-hair"/>
-              <circle cx="76" cy="96" r="15" class="p-glass p-glass--round"/>
-              <circle cx="124" cy="96" r="15" class="p-glass p-glass--round"/>
-              <rect x="90" y="93" width="20" height="4" class="p-glass p-glass--round"/>
-              <circle cx="146" cy="52" r="10" class="p-flower"/>
-              <circle cx="158" cy="60" r="10" class="p-flower"/>
-              <circle cx="146" cy="68" r="10" class="p-flower"/>
-              <circle cx="151" cy="60" r="6" class="p-flower-heart"/>
+        <!-- 03 THE STAR -->
+        <article class="panel panel--pink reveal" data-tilt>
+          <span class="panel__no">Nº 03</span>
+          <div class="panel__art">
+            <div class="panel__halftone"></div>
+            <svg viewBox="0 0 240 240" aria-hidden="true">
+              <!-- premiere marquee star -->
+              <path d="M120 200 L120 226 M104 226 L136 226" class="st-pole"/>
+              <path d="M120 24 L142 78 L200 82 L156 120 L170 178 L120 146 L70 178 L84 120 L40 82 L98 78 Z" class="st-star"/>
+              <g class="st-bulbs">
+                <circle cx="120" cy="42" r="5"/>
+                <circle cx="137" cy="80" r="5"/>
+                <circle cx="180" cy="86" r="5"/>
+                <circle cx="148" cy="115" r="5"/>
+                <circle cx="158" cy="160" r="5"/>
+                <circle cx="120" cy="132" r="5"/>
+                <circle cx="82" cy="160" r="5"/>
+                <circle cx="92" cy="115" r="5"/>
+                <circle cx="60" cy="86" r="5"/>
+                <circle cx="103" cy="80" r="5"/>
+              </g>
+              <circle cx="120" cy="103" r="16" class="st-heart"/>
             </svg>
           </div>
-          <div class="card__caption">
+          <div class="panel__caption">
             <h3>The Star</h3>
             <p>Buys a ticket to her own matinee just to hear the room laugh. The whole town is about to know her name.</p>
-            <span class="card__stamp card__stamp--pink">AND INTRODUCING</span>
+            <span class="panel__stamp panel__stamp--cream">AND INTRODUCING</span>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- ══════════════ QUOTE ══════════════ -->
-    <section class="quote">
-      <div class="quote__burst" aria-hidden="true"></div>
-      <blockquote class="reveal">
-        <p>“When you come to the end of the line, with a buddy who is more than a brother — and a little less than a wife — getting blind drunk together is really the only way to say farewell.”</p>
-        <cite>— Narrator, reel six</cite>
-      </blockquote>
-    </section>
-
     <!-- ══════════════ ON LOCATION (film strip) ══════════════ -->
-    <section class="locations" id="locations">
+    <section class="locations paper" id="locations">
       <p class="section-kicker reveal">Reel Three</p>
       <h2 class="section-title reveal">On Location</h2>
       <p class="locations__hint reveal">← Drag the reel →</p>
@@ -249,6 +362,7 @@
             <div class="frame__scene frame__scene--sunset">
               <div class="frame__sun"></div>
               <svg viewBox="0 0 300 90" preserveAspectRatio="xMidYMax slice"><path d="M0 90 L0 70 L40 70 L55 40 L70 70 L120 70 L120 55 L180 55 L180 70 L230 70 L245 30 L260 70 L300 70 L300 90 Z"/></svg>
+              <div class="frame__scratch"></div>
             </div>
             <div class="frame__label">
               <span class="frame__no">SC. 01</span>
@@ -259,9 +373,11 @@
 
           <article class="frame">
             <div class="frame__scene frame__scene--night">
+              <div class="frame__stars"></div>
               <div class="frame__moon"></div>
               <svg viewBox="0 0 300 90" preserveAspectRatio="xMidYMax slice"><path d="M0 90 L0 72 L30 72 L30 45 L48 45 L48 72 L90 72 L110 35 L130 72 L170 72 L170 50 L215 50 L215 72 L250 72 L250 60 L300 60 L300 90 Z"/></svg>
               <div class="frame__neon">EL&nbsp;CINEMA</div>
+              <div class="frame__scratch"></div>
             </div>
             <div class="frame__label">
               <span class="frame__no">SC. 02</span>
@@ -274,6 +390,7 @@
             <div class="frame__scene frame__scene--ranch">
               <div class="frame__sun frame__sun--high"></div>
               <svg viewBox="0 0 300 90" preserveAspectRatio="xMidYMax slice"><path d="M0 90 L0 74 L60 74 L60 52 L74 40 L88 52 L88 74 L140 74 L140 64 L200 64 L200 74 L300 74 L300 90 Z"/></svg>
+              <div class="frame__scratch"></div>
             </div>
             <div class="frame__label">
               <span class="frame__no">SC. 03</span>
@@ -286,6 +403,7 @@
             <div class="frame__scene frame__scene--diner">
               <div class="frame__neon frame__neon--pink">STEAK&nbsp;·&nbsp;MARTINI</div>
               <svg viewBox="0 0 300 90" preserveAspectRatio="xMidYMax slice"><path d="M0 90 L0 68 L300 68 L300 90 Z M20 68 L20 48 L120 48 L120 68 Z M160 68 L160 42 L280 42 L280 68 Z"/></svg>
+              <div class="frame__scratch"></div>
             </div>
             <div class="frame__label">
               <span class="frame__no">SC. 04</span>
@@ -296,8 +414,10 @@
 
           <article class="frame">
             <div class="frame__scene frame__scene--drivein">
+              <div class="frame__stars"></div>
               <div class="frame__screen"></div>
               <svg viewBox="0 0 300 90" preserveAspectRatio="xMidYMax slice"><path d="M0 90 L0 78 L40 78 L46 70 L84 70 L90 78 L140 78 L146 70 L184 70 L190 78 L240 78 L246 70 L284 70 L290 78 L300 78 L300 90 Z"/></svg>
+              <div class="frame__scratch"></div>
             </div>
             <div class="frame__label">
               <span class="frame__no">SC. 05</span>
@@ -310,6 +430,7 @@
             <div class="frame__scene frame__scene--hills">
               <svg viewBox="0 0 300 90" preserveAspectRatio="xMidYMax slice"><path d="M0 90 L0 60 C40 40 70 46 100 58 C140 34 180 36 220 52 C250 44 280 48 300 58 L300 90 Z"/></svg>
               <div class="frame__sign">HOLLYWOOD</div>
+              <div class="frame__scratch"></div>
             </div>
             <div class="frame__label">
               <span class="frame__no">SC. 06</span>
@@ -328,23 +449,31 @@
       <p class="section-kicker section-kicker--light reveal">Reel Four</p>
       <h2 class="section-title section-title--light reveal">Tonight’s Double Feature</h2>
 
-      <div class="posters__row">
+      <div class="posters__row reveal-stagger">
         <article class="poster poster--red reveal" data-tilt>
-          <span class="poster__banner">NOW SHOWING</span>
-          <p class="poster__studio">A ROW-DEE PICTURES RELEASE</p>
-          <h3 class="poster__title">The 14 Fists<br>of Fury Gulch</h3>
-          <p class="poster__blurb">He came to town with two fists.<br>He borrowed the other twelve.</p>
-          <div class="poster__burst"><span>ALL NEW<br>IN COLOR</span></div>
-          <p class="poster__credits">STARRING THE ACTOR · STUNTS BY THE STUNTMAN · FILMED IN BLAZING WIDESCREEN</p>
+          <span class="poster__tape poster__tape--l"></span>
+          <span class="poster__tape poster__tape--r"></span>
+          <div class="poster__border">
+            <span class="poster__banner">NOW SHOWING</span>
+            <p class="poster__studio">A ROW-DEE PICTURES RELEASE</p>
+            <h3 class="poster__title">The 14 Fists<br>of Fury Gulch</h3>
+            <p class="poster__blurb">He came to town with two fists.<br>He borrowed the other twelve.</p>
+            <div class="poster__burst"><span>ALL NEW<br>IN COLOR</span></div>
+            <p class="poster__credits">STARRING THE ACTOR · STUNTS BY THE STUNTMAN · FILMED IN BLAZING WIDESCREEN</p>
+          </div>
         </article>
 
         <article class="poster poster--teal reveal" data-tilt>
-          <span class="poster__banner poster__banner--late">LATE SHOW · 11:45 PM</span>
-          <p class="poster__studio">UNA PRODUZIONE SPAGHETTI</p>
-          <h3 class="poster__title poster__title--script">Operazione<br>Dinamite!</h3>
-          <p class="poster__blurb">Rome. Rockets. Revenge.<br>Dubbed in four languages, loved in all of them.</p>
-          <div class="poster__burst poster__burst--pink"><span>2ND<br>SMASH<br>WEEK</span></div>
-          <p class="poster__credits">TECHNISCOPE · TECHNICOLOR · TOTALLY TOO MUCH</p>
+          <span class="poster__tape poster__tape--l"></span>
+          <span class="poster__tape poster__tape--r"></span>
+          <div class="poster__border">
+            <span class="poster__banner poster__banner--late">LATE SHOW · 11:45 PM</span>
+            <p class="poster__studio">UNA PRODUZIONE SPAGHETTI</p>
+            <h3 class="poster__title poster__title--script">Operazione<br>Dinamite!</h3>
+            <p class="poster__blurb">Rome. Rockets. Revenge.<br>Dubbed in four languages, loved in all of them.</p>
+            <div class="poster__burst poster__burst--pink"><span>2ND<br>SMASH<br>WEEK</span></div>
+            <p class="poster__credits">TECHNISCOPE · TECHNICOLOR · TOTALLY TOO MUCH</p>
+          </div>
         </article>
       </div>
     </section>

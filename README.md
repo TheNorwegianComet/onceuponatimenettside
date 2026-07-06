@@ -18,16 +18,20 @@ python3 -m http.server 8000
 
 ## Høydepunkter
 
-- **Filmleder-intro** — nedtelling i «countdown leader»-stil før siden avsløres
-- **Buet herotypografi** — «ONCE UPON A TIME» på SVG-kurve over et enormt
-  HOLLYWOOD i lagvis retro-skygge, med bokstav-for-bokstav-animasjon
-- **Filmkorn** — animert SVG-støy over hele siden
-- **Egendefinert markør** — ring + prikk som reagerer på lenker og kort
-- **Marquee-bånd** — løpende tekstbånd mellom seksjoner
-- **Polaroid-kort** — «The Players» med 3D-tilt på hover
-- **Filmstripe** — horisontalt dra-for-å-rulle galleri med sprocket-hull,
-  neonskilt og solnedgangsscener i ren CSS/SVG
-- **Kinoplakater** — «Tonight's Double Feature» med starburst-badges
+- **Filmleder-intro** — nedtelling i «countdown leader»-stil med filmriper
+- **Gyllen time-panorama** — hero med sol, dis, åskammer (med Hollywood-skiltet),
+  palmer i flere dybdelag og parallakse på rulling; «ONCE UPON A TIME» buet på
+  SVG-kurve over et enormt HOLLYWOOD med trykk-forskjøvet skygge
+- **Neon-natt** — panorama med stjernehimmel, måne, lyskastere fra en premiere
+  og en bysilhuett med flimrende vinduer, under en revet papirkant
+- **Trykk-tekstur** — animert filmkorn, eldet papir-vask per seksjon, halvtone
+  og bevisst feilregistrert «ink» på titler
+- **Plakatpaneler** — «The Players» som serigrafi-aktige paneler (vintage-TV,
+  pilotbriller med solnedgangsrefleks, premierestjerne) med 3D-tilt
+- **Filmstripe** — dra-for-å-rulle galleri med sprocket-hull, vignetter,
+  filmriper og neonskilt i ren CSS/SVG
+- **Kinoplakater på teaterteppe** — tape, stiplede rammer og starburst-badges
+- **Egendefinert markør** og billettstubb-statistikk som teller opp
 - **Respekterer `prefers-reduced-motion`** og fungerer uten JavaScript
 
 ## Struktur

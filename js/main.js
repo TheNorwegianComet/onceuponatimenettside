@@ -56,6 +56,38 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  /* ── Parallax layers ─────────────────────────────────────── */
+  var plxEls = Array.prototype.slice.call(document.querySelectorAll("[data-plx]"));
+  if (plxEls.length && !prefersReducedMotion) {
+    var plxItems = plxEls.map(function (el) {
+      return { el: el, speed: parseFloat(el.getAttribute("data-plx")) || 0, section: el.closest("section") };
+    });
+    var plxTicking = false;
+    function applyParallax() {
+      plxTicking = false;
+      var vh = window.innerHeight;
+      plxItems.forEach(function (item) {
+        var r = item.section.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > vh) return;
+        item.el.style.transform = "translate3d(0," + (-r.top * item.speed).toFixed(1) + "px,0)";
+      });
+    }
+    window.addEventListener("scroll", function () {
+      if (!plxTicking) {
+        plxTicking = true;
+        requestAnimationFrame(applyParallax);
+      }
+    }, { passive: true });
+    applyParallax();
+  }
+
+  /* ── Stagger delays for grouped reveals ──────────────────── */
+  document.querySelectorAll(".reveal-stagger").forEach(function (group) {
+    Array.prototype.forEach.call(group.querySelectorAll(".reveal"), function (el, i) {
+      el.style.setProperty("--d", (i * 120) + "ms");
+    });
+  });
+
   /* ── Reveal on scroll ────────────────────────────────────── */
   var revealObserver = new IntersectionObserver(
     function (entries) {
@@ -98,7 +130,7 @@
     },
     { threshold: 0.6 }
   );
-  document.querySelectorAll(".stat__num").forEach(function (el) {
+  document.querySelectorAll(".stub__num").forEach(function (el) {
     statObserver.observe(el);
   });
 
@@ -122,7 +154,7 @@
       cursor.style.top = cy + "px";
       requestAnimationFrame(follow);
     })();
-    document.querySelectorAll("a, button, .card, .poster, .frame").forEach(function (el) {
+    document.querySelectorAll("a, button, .panel, .poster, .frame, .stub").forEach(function (el) {
       el.addEventListener("mouseenter", function () { cursor.classList.add("cursor--hover"); });
       el.addEventListener("mouseleave", function () { cursor.classList.remove("cursor--hover"); });
     });
